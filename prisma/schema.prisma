@@ -13,10 +13,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  username String @unique
+  password String
+  urls     Url[]
+}
+
 model Url {
   id          String   @id @default(cuid())
   originalUrl String
   shortCode   String   @unique
   createdAt   DateTime @default(now())
   visits      Int      @default(0)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
 }
