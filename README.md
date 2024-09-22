@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shorten - URL Shortener
+
+Shorten is a modern, user-friendly URL shortening application built with Next.js and Prisma. It allows users to create shortened versions of long URLs, making them easier to share and manage.
+
+## Features
+
+- User authentication (register, login, logout)
+- Create shortened URLs with custom codes (optional)
+- View list of shortened URLs with visit counts
+- Copy shortened URLs to clipboard
+- Delete shortened URLs
+- Redirect to original URLs when accessing shortened links
+
+## Technology Stack
+
+- **Frontend**: 
+  - Next.js 14 (React framework)
+  - TypeScript
+  - Tailwind CSS for styling
+  - shadcn/ui components
+- **Backend**: 
+  - Next.js API routes
+  - Prisma ORM
+- **Database**: 
+  - PostgreSQL
+- **Authentication**: 
+  - JWT (JSON Web Tokens)
+  - bcrypt for password hashing
+- **Form Validation**: 
+  - Zod
+- **Deployment**: 
+  - Vercel (recommended)
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/0xtbug/shorten.git
+   cd shorten
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the following:
+   ```bash
+   DATABASE_URL="your_postgresql_connection_string"
+   JWT_SECRET="your_jwt_secret"
+   NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Set up the database:
+   ```bash
+   npx prisma migrate dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This application is designed to be easily deployed on Vercel. Follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push your code to a GitHub repository.
+2. Connect your GitHub account to Vercel.
+3. Create a new project in Vercel and select your repository.
+4. Configure your environment variables in Vercel's project settings.
+5. Deploy!
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
