@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://github.com/user-attachments/assets/995e555b-837b-4db5-82c7-ed79495a4927" height="400px" alt="Image" />
+</p>
+
 # Shorten - URL Shortener
 
 Shorten is a modern, user-friendly URL shortening application built with Next.js and Prisma. It allows users to create shortened versions of long URLs, making them easier to share and manage.
